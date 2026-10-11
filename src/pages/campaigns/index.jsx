@@ -104,7 +104,7 @@ const Campaigns = ({ campaigns, gifts, onCreateCampaign, onUpdateCampaign, onArc
             <Modal description={dialog?.mode === "edit" ? "Update the goal, program details, or end date for this campaign." : "Name the community effort, choose its program area, and set a measurable goal."} onClose={closeDialog} open={dialog?.mode === "create" || dialog?.mode === "edit"} size="wide" title={dialog?.mode === "edit" ? "Edit " + dialog.campaign.name : "Create a campaign"}>
                 <CampaignForm initialValues={dialog?.campaign} onSubmit={saveCampaign} submitLabel={dialog?.mode === "edit" ? "Save campaign" : "Create campaign"} />
             </Modal>
-            <Modal actions={<><Button onClick={closeDialog}>Keep campaign</Button><Button onClick={confirmAction} variant={dialog?.mode === "delete" ? "danger" : "primary"}>{confirmations[dialog?.mode]?.action}</Button></>} description={confirmations[dialog?.mode]?.description} onClose={closeDialog} open={Boolean(confirmations[dialog?.mode])} title={confirmations[dialog?.mode]?.title}>
+            <Modal actions={<><Button data-dialog-cancel onClick={closeDialog}>Keep campaign</Button><Button onClick={confirmAction} variant={dialog?.mode === "delete" ? "danger" : "primary"}>{confirmations[dialog?.mode]?.action}</Button></>} description={confirmations[dialog?.mode]?.description} onClose={closeDialog} open={Boolean(confirmations[dialog?.mode])} title={confirmations[dialog?.mode]?.title}>
                 <div className={styles.confirm}><span>{confirmations[dialog?.mode]?.icon}</span><p><strong>{dialog?.campaign?.name}</strong> will be updated in the current session.</p></div>
             </Modal>
         </main>
