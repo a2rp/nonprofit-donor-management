@@ -113,7 +113,7 @@ const DonorProfile = ({ donors, gifts, campaigns, onUpdateDonor, onDeleteDonor, 
                     <div className={styles.formActions}><Button onClick={() => setDialog("")}>Cancel</Button><Button type="submit" variant="primary">Save note</Button></div>
                 </form>
             </Modal>
-            <Modal actions={<><Button onClick={() => setDialog("")}>Keep donor</Button><Button onClick={removeDonor} variant="danger">Remove donor</Button></>} description="This removes the contact details and keeps gift totals without linking them to this donor." onClose={() => setDialog("")} open={dialog === "delete"} title="Remove this donor?">
+            <Modal actions={<><Button data-dialog-cancel onClick={() => setDialog("")}>Keep donor</Button><Button onClick={removeDonor} variant="danger">Remove donor</Button></>} description="This removes the contact details and keeps gift totals without linking them to this donor." onClose={() => setDialog("")} open={dialog === "delete"} title="Remove this donor?">
                 <div className={styles.confirmContent}><FiTrash2 aria-hidden="true" /><p><strong>{getDonorName(donor)}</strong>'s personal contact details will be removed from this session.</p></div>
             </Modal>
         </main>
