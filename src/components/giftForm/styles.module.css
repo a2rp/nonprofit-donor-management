@@ -1,0 +1,17 @@
+.form { display: grid; padding: 21px 24px 24px; gap: 16px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.grid label { display: grid; min-width: 0; gap: 7px; color: var(--color-primary-dark); font-size: 14px; font-weight: 680; }
+.grid input, .grid select, .grid textarea { width: 100%; min-height: 44px; padding: 10px 12px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: 8px; font: inherit; font-size: 14px; }
+.grid textarea { resize: vertical; }
+.grid input:focus, .grid select:focus, .grid textarea:focus { outline: 3px solid rgb(111 73 119 / 15%); border-color: var(--color-primary); }
+.full { grid-column: 1 / -1; }
+.error { padding: 10px 12px; color: var(--color-danger); background: #faeeee; border-radius: 8px; font-size: 14px; }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.actions > span { color: var(--color-muted); font-size: 13px; }
+
+@media (max-width: 560px) {
+    .form { padding: 18px; }
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .full { grid-column: auto; }
+    .actions { align-items: stretch; flex-direction: column; }
+}
