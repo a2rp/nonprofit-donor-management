@@ -1,0 +1,107 @@
+.page {
+    width: min(1200px, calc(100% - 56px));
+    margin: 0 auto;
+    padding: 42px 0 74px;
+
+    .backLink { display: inline-flex; margin-bottom: 25px; align-items: center; gap: 8px; color: var(--color-muted); font-size: 14px; font-weight: 650; transition: color 160ms ease; }
+    .backLink:hover { color: var(--color-primary); }
+    .profileHero { display: flex; padding: 27px 30px; align-items: center; justify-content: space-between; gap: 24px; background: #f7f0f5; border: 1px solid #eadde7; border-radius: 17px; }
+    .identity { display: flex; align-items: center; gap: 19px; }
+    .avatar { display: grid; width: 76px; height: 76px; flex: 0 0 auto; color: #fff; background: var(--color-primary); border: 4px solid #fff; border-radius: 50%; box-shadow: 0 7px 20px rgb(84 46 91 / 16%); font-size: 23px; font-weight: 760; place-items: center; }
+    .donorId, .context { color: var(--color-primary); font-size: 13px; font-weight: 760; letter-spacing: 0.08em; }
+    .identity h1 { margin: 6px 0 8px; color: var(--color-primary-dark); font-family: Georgia, "Times New Roman", serif; font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.8px; line-height: 1.08; }
+    .identity > div > p { display: flex; margin-top: 12px; align-items: center; gap: 8px; color: var(--color-muted); font-size: 14px; }
+    .identity > div > p i { width: 4px; height: 4px; background: #b6a8b9; border-radius: 50%; }
+    .heroActions { display: flex; align-items: center; gap: 9px; }
+    .deleteButton { display: grid; width: 42px; height: 42px; color: #9e5156; background: #fff; border: 1px solid #e5cdd0; border-radius: 10px; font-size: 17px; place-items: center; transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease; }
+    .deleteButton:hover { color: #802f36; border-color: #c8868b; box-shadow: 0 4px 14px rgb(130 47 54 / 13%); }
+
+    .metrics { display: grid; margin: 17px 0 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .metrics article { display: flex; min-height: 92px; padding: 17px 19px; align-items: center; gap: 13px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 13px; }
+    .metrics small { display: block; color: var(--color-muted); font-size: 14px; }
+    .metrics strong { display: block; margin-top: 4px; color: var(--color-primary-dark); font-size: 21px; }
+    .metricIcon, .giftIcon { display: grid; width: 42px; height: 42px; flex: 0 0 auto; color: var(--color-primary); background: #f0e8f3; border-radius: 12px; font-size: 18px; place-items: center; }
+    .contentGrid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr); gap: 18px; align-items: start; }
+    .givingPanel, .relationshipPanel { min-width: 0; padding: 23px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 15px; box-shadow: 0 6px 20px rgb(40 28 47 / 3%); }
+    .panelHeading { display: flex; margin-bottom: 14px; align-items: center; justify-content: space-between; gap: 12px; }
+    .panelHeading h2 { margin-top: 6px; color: var(--color-primary-dark); font-family: Georgia, "Times New Roman", serif; font-size: 23px; }
+    .panelHeading > a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-primary); font-size: 14px; font-weight: 700; }
+    .panelHeading > a:hover { color: var(--color-primary-dark); }
+    .giftRow { display: flex; min-height: 83px; padding: 15px 0; align-items: center; gap: 13px; border-top: 1px solid var(--color-border); }
+    .giftDetails { display: grid; min-width: 0; gap: 4px; }
+    .giftDetails strong { overflow: hidden; color: var(--color-text); font-size: 15px; text-overflow: ellipsis; white-space: nowrap; }
+    .giftDetails span, .giftDetails small { color: var(--color-muted); font-size: 14px; }
+    .giftAmount { display: grid; margin-left: auto; justify-items: end; gap: 5px; }
+    .giftAmount > strong { color: var(--color-primary-dark); font-size: 16px; }
+    .emptyHistory { display: grid; min-height: 215px; padding: 25px; justify-items: center; align-content: center; gap: 10px; color: var(--color-muted); text-align: center; }
+    .emptyHistory > svg { color: var(--color-primary); font-size: 23px; }
+    .emptyHistory strong { color: var(--color-primary-dark); font-size: 16px; }
+    .emptyHistory span { font-size: 14px; }
+    .emptyHistory a { display: inline-flex; margin-top: 4px; align-items: center; gap: 6px; color: var(--color-primary); font-size: 14px; font-weight: 700; }
+    .relationshipPanel { padding: 22px; }
+    .relationshipPanel .panelHeading > svg { color: var(--color-primary); font-size: 19px; }
+    .contactCard { display: grid; padding: 9px 13px; gap: 2px; background: #fbf9fc; border: 1px solid #eee7ef; border-radius: 11px; }
+    .contactCard > a { display: flex; min-height: 42px; align-items: center; gap: 9px; color: var(--color-text); font-size: 14px; }
+    .contactCard > a > svg:first-child { flex: 0 0 auto; color: var(--color-primary); }
+    .contactCard > a > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .contactCard > a > svg:last-child { margin-left: auto; flex: 0 0 auto; color: var(--color-muted); }
+    .contactCard > a:hover { color: var(--color-primary); }
+    .preferredContact { display: flex; margin-top: 5px; padding-top: 11px; justify-content: space-between; gap: 10px; border-top: 1px solid var(--color-border); font-size: 14px; }
+    .preferredContact span { color: var(--color-muted); }
+    .preferredContact strong { color: var(--color-primary-dark); }
+    .personalNote { margin: 14px 0 17px; padding: 13px 14px; color: #695f6a; background: #faf5eb; border-left: 3px solid #ddbd76; border-radius: 0 9px 9px 0; font-size: 14px; line-height: 1.55; }
+    .interests > div { display: flex; margin-top: 9px; flex-wrap: wrap; gap: 7px; }
+    .interests > div > span { padding: 6px 10px; color: #644867; background: #f2eaf4; border-radius: 999px; font-size: 13px; font-weight: 650; }
+    .interests > div > small { color: var(--color-muted); font-size: 14px; }
+    .activityHeading { display: flex; margin: 22px 0 4px; align-items: center; justify-content: space-between; gap: 10px; }
+    .activityHeading button { display: inline-flex; align-items: center; gap: 4px; color: var(--color-primary); background: transparent; border: 0; font-size: 14px; font-weight: 700; }
+    .activityHeading button:hover { color: var(--color-primary-dark); }
+    .touchpoint { display: grid; padding: 13px 0; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; border-top: 1px solid var(--color-border); }
+    .timelineDot { display: grid; width: 28px; height: 28px; color: var(--color-primary); background: #f2eaf4; border-radius: 50%; font-size: 14px; place-items: center; }
+    .touchpoint > div > div { display: flex; justify-content: space-between; gap: 10px; }
+    .touchpoint strong { color: var(--color-primary-dark); font-size: 14px; }
+    .touchpoint time { color: var(--color-muted); font-size: 13px; white-space: nowrap; }
+    .touchpoint p { margin-top: 5px; color: var(--color-muted); font-size: 14px; line-height: 1.5; }
+    .emptyTimeline { padding: 15px 0; color: var(--color-muted); font-size: 14px; }
+    .touchForm { display: grid; padding: 21px 24px 24px; gap: 15px; }
+    .touchForm label { display: grid; gap: 7px; color: var(--color-primary-dark); font-size: 14px; font-weight: 680; }
+    .touchForm input, .touchForm select, .touchForm textarea { width: 100%; min-height: 44px; padding: 10px 12px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: 8px; font: inherit; font-size: 14px; }
+    .touchForm textarea { resize: vertical; }
+    .touchForm input:focus, .touchForm select:focus, .touchForm textarea:focus { outline: 3px solid rgb(111 73 119 / 15%); border-color: var(--color-primary); }
+    .touchForm [role="alert"] { color: #a2383d; font-size: 14px; }
+    .formActions { display: flex; justify-content: flex-end; gap: 9px; }
+    .confirmContent { display: flex; padding: 20px 24px 25px; align-items: flex-start; gap: 13px; color: var(--color-muted); font-size: 15px; line-height: 1.55; }
+    .confirmContent > svg { flex: 0 0 auto; margin-top: 2px; color: #a84850; font-size: 19px; }
+    .confirmContent strong { color: var(--color-primary-dark); }
+}
+
+.notFound { display: grid; min-height: 65vh; padding: 48px 24px; justify-items: center; align-content: center; gap: 13px; text-align: center; }
+.notFound > span { display: grid; width: 56px; height: 56px; color: var(--color-primary); background: #f2eaf4; border-radius: 17px; font-size: 23px; place-items: center; }
+.notFound h1 { color: var(--color-primary-dark); font-family: Georgia, "Times New Roman", serif; font-size: 30px; }
+.notFound p { color: var(--color-muted); font-size: 15px; }
+.notFound a { display: inline-flex; margin-top: 6px; padding: 10px 15px; align-items: center; gap: 7px; color: var(--color-primary); border: 1px solid var(--color-border); border-radius: 9px; font-size: 14px; font-weight: 700; }
+.notFound a:hover { border-color: var(--color-primary); box-shadow: 0 4px 15px rgb(84 46 91 / 11%); }
+
+@media (max-width: 940px) {
+    .page .profileHero { align-items: flex-start; flex-direction: column; }
+    .page .heroActions { width: 100%; flex-wrap: wrap; }
+    .page .contentGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .page { width: calc(100% - 32px); padding-top: 27px; }
+    .page .profileHero { padding: 19px; }
+    .page .identity { align-items: flex-start; gap: 12px; }
+    .page .avatar { width: 57px; height: 57px; font-size: 18px; }
+    .page .identity h1 { font-size: 30px; }
+    .page .identity > div > p { flex-wrap: wrap; }
+    .page .heroActions > :first-child { flex: 1 1 auto; }
+    .page .metrics { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+    .page .metrics article { min-height: 76px; }
+    .page .givingPanel, .page .relationshipPanel { padding: 17px; }
+    .page .giftRow { align-items: flex-start; }
+    .page .giftAmount { gap: 6px; }
+    .page .giftAmount > strong { font-size: 14px; }
+    .page .touchForm { padding: 18px; }
+    .page .confirmContent { padding: 18px; }
+}
