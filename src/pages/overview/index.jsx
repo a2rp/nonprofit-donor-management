@@ -1,6 +1,5 @@
 import { FiArrowRight, FiArrowUpRight, FiHeart, FiPlus, FiUsers } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import StatusPill from "../../components/statusPill/index.jsx";
 import { formatCompactCurrency, formatCurrency, formatDate, getDonorName } from "../../utils/format.js";
 import styles from "./styles.module.css";
 
