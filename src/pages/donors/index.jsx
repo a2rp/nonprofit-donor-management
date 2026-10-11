@@ -104,7 +104,7 @@ const Donors = ({ donors, gifts, onCreateDonor, onUpdateDonor, onDeleteDonor }) 
                 <DonorForm initialValues={dialog?.donor} onSubmit={saveDonor} submitLabel={dialog?.mode === "edit" ? "Save donor" : "Add donor"} />
             </Modal>
             <Modal
-                actions={<><Button onClick={() => setDialog(null)}>Keep donor</Button><Button onClick={removeDonor} variant="danger">Remove donor</Button></>}
+                actions={<><Button data-dialog-cancel onClick={() => setDialog(null)}>Keep donor</Button><Button onClick={removeDonor} variant="danger">Remove donor</Button></>}
                 description="Gift amounts stay in the ledger and campaign totals. The gifts become unlinked from this contact record."
                 onClose={() => setDialog(null)}
                 open={dialog?.mode === "delete"}
