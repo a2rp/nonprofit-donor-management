@@ -1,0 +1,29 @@
+.app {
+    min-height: 100vh;
+
+    .main {
+        min-height: 68vh;
+        padding-top: 78px;
+
+        @media (max-width: 760px) {
+            padding-top: 70px;
+        }
+    }
+
+    .skipLink {
+        position: fixed;
+        z-index: 110;
+        top: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        transform: translateY(-160%);
+        border-radius: 8px;
+        color: #fff;
+        background: var(--color-primary-dark);
+        font-size: 14px;
+
+        &:focus {
+            transform: translateY(0);
+        }
+    }
+}
