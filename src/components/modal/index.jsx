@@ -14,7 +14,8 @@ const Modal = ({ open, title, description, onClose, children, actions, size = "r
     useEffect(() => {
         if (!open) return undefined;
         const previousFocus = document.activeElement;
-        dialogRef.current?.focus();
+        const safeAction = dialogRef.current?.querySelector("[data-dialog-cancel]");
+        (safeAction || dialogRef.current)?.focus();
         const handleKeyDown = (event) => {
             if (event.key === "Escape") closeRef.current?.();
             if (event.key !== "Tab") return;
