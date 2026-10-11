@@ -1,0 +1,65 @@
+.pill {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 26px;
+    padding: 3px 9px;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 680;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.active,
+.acknowledged,
+.received,
+.monthlygiver {
+    color: #37644d;
+    background: #e6f1e8;
+    border-color: #d4e5d7;
+}
+
+.needsthanks,
+.leadershipcircle,
+.upcoming {
+    color: #80540a;
+    background: #fff1cc;
+    border-color: #f4e1a8;
+}
+
+.communitysupporter,
+.volunteer,
+.transfer {
+    color: #51416c;
+    background: #eee8f4;
+    border-color: #e0d5e9;
+}
+
+.foundation,
+.event {
+    color: #8b4d36;
+    background: #f9e9e0;
+    border-color: #efd8ca;
+}
+
+.archived,
+.paused,
+.neutral {
+    color: #635a68;
+    background: #f0ecef;
+    border-color: #e3dde2;
+}
+
+.completed {
+    color: #385a70;
+    background: #e6eff5;
+    border-color: #d2e2eb;
+}
+
+.reversed {
+    color: #8d3b3f;
+    background: #f9e7e6;
+    border-color: #edcfcd;
+}
