@@ -1,0 +1,567 @@
+.page {
+    width: min(1280px, calc(100% - 56px));
+    margin: 0 auto;
+    padding: 43px 0 74px;
+
+    .pageHeading {
+        display: flex;
+        margin-bottom: 25px;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .context {
+        color: var(--color-primary);
+        font-size: 13px;
+        font-weight: 760;
+        letter-spacing: 0.09em;
+    }
+
+    .pageHeading h1 {
+        margin-top: 8px;
+        color: var(--color-primary-dark);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(34px, 4vw, 46px);
+        font-weight: 700;
+        letter-spacing: -1.4px;
+        line-height: 1.1;
+    }
+
+    .pageHeading p {
+        max-width: 660px;
+        margin-top: 9px;
+        color: var(--color-muted);
+        font-size: 16px;
+    }
+
+    .directoryIntro {
+        display: flex;
+        min-height: 82px;
+        padding: 14px 18px;
+        align-items: center;
+        gap: 13px;
+        background: #f2eaf4;
+        border: 1px solid #e4d9e8;
+        border-radius: 13px;
+
+        > p {
+            display: grid;
+            gap: 2px;
+        }
+
+        > p strong {
+            color: var(--color-primary-dark);
+            font-size: 15px;
+            font-weight: 730;
+        }
+
+        > p span {
+            color: var(--color-muted);
+            font-size: 14px;
+        }
+    }
+
+    .directoryMark {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 auto;
+        color: var(--color-primary-dark);
+        background: #fffdf9;
+        border-radius: 12px;
+        font-size: 20px;
+        place-items: center;
+    }
+
+    .directoryCount {
+        margin-left: auto;
+        color: var(--color-primary);
+        font-size: 14px;
+        font-weight: 720;
+        white-space: nowrap;
+    }
+
+    .toolbar {
+        display: flex;
+        margin-top: 20px;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .searchBox {
+        display: flex;
+        min-width: 250px;
+        min-height: 46px;
+        padding: 0 13px;
+        flex: 1;
+        align-items: center;
+        gap: 9px;
+        color: var(--color-muted);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 9px;
+
+        svg {
+            flex: 0 0 auto;
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%;
+            min-width: 0;
+            color: var(--color-text);
+            background: transparent;
+            border: 0;
+            font-size: 15px;
+            outline: 0;
+
+            &::placeholder {
+                color: #918896;
+            }
+        }
+
+        &:focus-within {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgb(98 70 124 / 10%);
+        }
+    }
+
+    .selectField {
+        display: grid;
+        min-width: 185px;
+        gap: 5px;
+
+        > span {
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+
+        select {
+            min-height: 46px;
+            padding: 0 34px 0 12px;
+            color: var(--color-text);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 9px;
+            font-size: 14px;
+            outline: none;
+
+            &:focus {
+                border-color: var(--color-primary);
+                box-shadow: 0 0 0 3px rgb(98 70 124 / 10%);
+            }
+        }
+    }
+
+    .clearButton {
+        min-height: 46px;
+        padding: 0 10px;
+        color: var(--color-primary);
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 650;
+        white-space: nowrap;
+
+        &:hover {
+            background: #f2eaf4;
+            border-color: #e5d9e9;
+            box-shadow: none;
+        }
+    }
+
+    .resultsLine {
+        display: flex;
+        margin: 15px 1px 12px;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+
+    .donorGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .donorCard {
+        min-width: 0;
+        overflow: hidden;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 15px;
+        box-shadow: 0 8px 22px rgb(56 39 69 / 5%);
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        &:hover {
+            border-color: #d6c5df;
+            box-shadow: 0 12px 28px rgb(56 39 69 / 9%);
+        }
+    }
+
+    .cardTop {
+        display: flex;
+        min-height: 78px;
+        padding: 14px 16px;
+        align-items: center;
+        gap: 11px;
+        background: #eee8f3;
+        border-bottom: 1px solid #e5dae9;
+    }
+
+    .cardTop1 { background: #fff1d3; border-color: #f1e4c2; }
+    .cardTop2 { background: #f9e9e3; border-color: #efd8ce; }
+    .cardTop3 { background: #e8f0ea; border-color: #d7e5db; }
+
+    .avatar {
+        display: grid;
+        width: 45px;
+        height: 45px;
+        flex: 0 0 auto;
+        color: var(--color-primary-dark);
+        background: rgb(255 255 255 / 85%);
+        border: 1px solid rgb(73 54 95 / 12%);
+        border-radius: 50%;
+        font-size: 14px;
+        font-weight: 760;
+        place-items: center;
+    }
+
+    .donorId {
+        color: var(--color-primary-dark);
+        font-size: 13px;
+        font-weight: 720;
+    }
+
+    .removeButton {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        margin-left: auto;
+        color: #91535a;
+        background: rgb(255 255 255 / 80%);
+        border: 1px solid rgb(145 83 90 / 18%);
+        border-radius: 9px;
+        font-size: 17px;
+        place-items: center;
+
+        &:hover {
+            color: #fff;
+            background: var(--color-danger);
+            border-color: var(--color-danger);
+        }
+    }
+
+    .cardBody {
+        padding: 17px 16px 14px;
+    }
+
+    .nameBlock {
+        display: grid;
+        min-height: 60px;
+        align-content: start;
+        justify-items: start;
+        gap: 7px;
+
+        h2 {
+            color: var(--color-primary-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.15;
+        }
+    }
+
+    .donorNote {
+        min-height: 43px;
+        margin: 10px 0 13px;
+        color: var(--color-muted);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contactLine {
+        display: flex;
+        min-width: 0;
+        margin-top: 7px;
+        align-items: center;
+        gap: 8px;
+        color: var(--color-muted);
+        font-size: 14px;
+
+        svg {
+            flex: 0 0 auto;
+            color: var(--color-primary);
+            font-size: 15px;
+        }
+
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .interests {
+        display: flex;
+        min-height: 37px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        span {
+            display: inline-flex;
+            min-height: 25px;
+            padding: 3px 8px;
+            align-items: center;
+            color: var(--color-primary);
+            background: #f5f0f7;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+    }
+
+    .givingSummary {
+        display: flex;
+        margin-top: 13px;
+        padding: 12px 0;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        border-top: 1px solid #eee7e0;
+        border-bottom: 1px solid #eee7e0;
+
+        > div {
+            display: grid;
+            gap: 3px;
+        }
+
+        > div:first-child > span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+
+        > div:first-child strong {
+            color: var(--color-primary-dark);
+            font-size: 17px;
+            font-weight: 740;
+        }
+
+        > div:last-child {
+            justify-items: end;
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 680;
+        }
+
+        > div:last-child small {
+            color: var(--color-muted);
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+
+    .cardActions {
+        display: flex;
+        padding-top: 12px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .profileLink {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--color-primary);
+        font-size: 14px;
+        font-weight: 700;
+
+        svg {
+            transition: transform 160ms ease;
+        }
+
+        &:hover {
+            color: var(--color-primary-dark);
+            box-shadow: none;
+        }
+
+        &:hover svg {
+            transform: translate(2px, -2px);
+        }
+    }
+
+    .editButton {
+        min-height: 34px;
+        padding: 0 11px;
+        color: var(--color-primary-dark);
+        background: #fff;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 650;
+
+        &:hover {
+            background: #f7f2f8;
+            border-color: #d6c5df;
+        }
+    }
+
+    .emptyState {
+        display: grid;
+        min-height: 300px;
+        padding: 35px;
+        justify-items: center;
+        align-content: center;
+        gap: 12px;
+        text-align: center;
+        background: var(--color-surface);
+        border: 1px dashed #d9cbdc;
+        border-radius: 15px;
+
+        > span {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            color: var(--color-primary);
+            background: #f1eaf4;
+            border-radius: 50%;
+            font-size: 20px;
+            place-items: center;
+        }
+
+        h2 {
+            color: var(--color-primary-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        p {
+            max-width: 470px;
+            color: var(--color-muted);
+            font-size: 15px;
+        }
+    }
+
+    .srOnly {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+
+    @media (max-width: 1000px) {
+        .donorGrid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .toolbar {
+            flex-wrap: wrap;
+        }
+
+        .searchBox {
+            flex-basis: 100%;
+        }
+
+        .selectField {
+            flex: 1;
+        }
+    }
+
+    @media (max-width: 760px) {
+        width: calc(100% - 32px);
+        padding-top: 30px;
+
+        .pageHeading {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .directoryIntro {
+            align-items: flex-start;
+        }
+
+        .directoryCount {
+            align-self: center;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .directoryIntro {
+            flex-wrap: wrap;
+        }
+
+        .directoryIntro > p {
+            width: calc(100% - 57px);
+        }
+
+        .directoryCount {
+            margin-left: 57px;
+        }
+
+        .toolbar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .searchBox {
+            min-width: 0;
+            grid-column: 1 / -1;
+        }
+
+        .selectField {
+            min-width: 0;
+        }
+
+        .selectField select {
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .clearButton {
+            grid-column: 1 / -1;
+            justify-self: start;
+        }
+
+        .resultsLine {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .donorGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.confirmContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    > svg {
+        flex: 0 0 auto;
+        margin-top: 2px;
+        color: var(--color-danger);
+        font-size: 18px;
+    }
+
+    p {
+        color: var(--color-text);
+        font-size: 15px;
+        line-height: 1.55;
+    }
+}
