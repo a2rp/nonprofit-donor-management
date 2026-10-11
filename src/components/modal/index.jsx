@@ -6,7 +6,10 @@ import styles from "./styles.module.css";
 const Modal = ({ open, title, description, onClose, children, actions, size = "regular" }) => {
     const dialogRef = useRef(null);
     const closeRef = useRef(onClose);
-    closeRef.current = onClose;
+
+    useEffect(() => {
+        closeRef.current = onClose;
+    }, [onClose]);
 
     useEffect(() => {
         if (!open) return undefined;
