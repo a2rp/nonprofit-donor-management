@@ -1,0 +1,92 @@
+.toast {
+    position: fixed;
+    z-index: 120;
+    top: 94px;
+    right: 22px;
+    display: grid;
+    width: min(410px, calc(100vw - 32px));
+    min-height: 76px;
+    padding: 15px 44px 16px 16px;
+    grid-template-columns: 24px 1fr;
+    align-items: start;
+    gap: 11px;
+    overflow: hidden;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 13px;
+    box-shadow: 0 16px 38px rgb(41 29 52 / 18%);
+    animation: toastAppear 180ms ease both;
+
+    .icon {
+        width: 22px;
+        height: 22px;
+        margin-top: 1px;
+        color: var(--color-primary);
+    }
+
+    .copy strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 720;
+        line-height: 1.35;
+    }
+
+    .copy p {
+        margin-top: 3px;
+        color: var(--color-muted);
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .dismiss {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: grid;
+        width: 30px;
+        height: 30px;
+        color: var(--color-muted);
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        font-size: 17px;
+        place-items: center;
+
+        &:hover {
+            color: var(--color-primary-dark);
+            border-color: var(--color-border);
+            box-shadow: none;
+        }
+    }
+
+    .timer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: var(--color-accent);
+        transform-origin: left;
+        animation: toastTimer 5.2s linear both;
+    }
+
+    @media (max-width: 600px) {
+        top: 80px;
+        right: 16px;
+    }
+}
+
+.success .icon { color: var(--color-positive); }
+.error .icon { color: var(--color-danger); }
+.error .timer { background: var(--color-danger); }
+.info .timer { background: var(--color-coral); }
+
+@keyframes toastAppear {
+    from { opacity: 0; transform: translateY(-7px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastTimer {
+    to { transform: scaleX(0); }
+}
