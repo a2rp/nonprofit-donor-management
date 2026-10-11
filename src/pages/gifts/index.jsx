@@ -106,7 +106,7 @@ const Gifts = ({ gifts, donors, campaigns, onCreateGift, onUpdateGift, onDeleteG
             <Modal description={dialog?.mode === "edit" ? "Update the gift details linked to this record." : "Record a contribution. You can leave the donor and campaign unassigned."} onClose={closeDialog} open={dialog?.mode === "create" || dialog?.mode === "edit"} size="wide" title={dialog?.mode === "edit" ? "Edit gift " + dialog.gift.id : "Record a gift"}>
                 <GiftForm campaigns={campaigns} donors={donors} initialValues={dialog?.gift} onSubmit={saveGift} submitLabel={dialog?.mode === "edit" ? "Save gift" : "Add gift record"} />
             </Modal>
-            <Modal actions={<><Button onClick={closeDialog}>Keep record</Button><Button onClick={removeGift} variant="danger">Remove gift</Button></>} description="This gift will be removed from session totals, campaign progress, and the donor's giving history." onClose={closeDialog} open={dialog?.mode === "delete"} title="Remove this gift record?">
+            <Modal actions={<><Button data-dialog-cancel onClick={closeDialog}>Keep record</Button><Button onClick={removeGift} variant="danger">Remove gift</Button></>} description="This gift will be removed from session totals, campaign progress, and the donor's giving history." onClose={closeDialog} open={dialog?.mode === "delete"} title="Remove this gift record?">
                 <div className={styles.confirm}><FiTrash2 aria-hidden="true" /><p><strong>{dialog?.gift?.id}</strong> for {formatCurrency(dialog?.gift?.amount)} will be removed from this session.</p></div>
             </Modal>
         </main>
